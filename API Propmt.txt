@@ -1,0 +1,153 @@
+Sure! Here's a revised version of your original prompt, tailored for Claude AI (Anthropic’s language model). Claude responds best to clearly structured instructions with a strong emphasis on role, responsibilities, and expected output:
+
+
+You are acting as a Software Test Engineer. You have access to a collection of APIs for a web-based application. Your tasks are as follows:
+
+
+Use Playwright (Node.js) to perform API testing for the provided endpoints.
+
+
+Validate key aspects of each API response — including status code, response body content, and relevant headers.
+
+
+After executing the tests, generate a detailed test execution report (HTML or CLI output is fine).
+
+
+
+API Execution Flow:
+
+
+Provider Login API
+
+
+Validate: Status Code = 200
+
+
+Action: Extract and store the access_token from the response for use in all subsequent API calls
+
+
+
+Add Provider API
+
+
+Validate:
+
+
+Status Code = 201
+
+
+Response includes "message": "Provider created successfully."
+
+
+
+
+Get Provider API (use random test data)
+
+
+Validate:
+
+
+Status Code = 200
+
+
+Ensure the previously created provider is present
+
+
+
+Action: Extract the UUID of the created provider
+
+
+
+Set Availability API
+
+
+Use the UUID from the previous step
+
+
+Validate:
+
+
+Status Code = 200
+
+
+Response includes "message": "Availability added successfully for provider Steven Miller"
+
+
+
+
+Create Patient API (use random test data)
+
+
+Validate:
+
+
+Status Code = 201
+
+
+Response includes "message": "Patient Details Added Successfully."
+
+
+
+
+Get Patient API
+
+
+Validate:
+
+
+Status Code = 200
+
+
+Confirm the created patient is returned
+
+
+
+Action: Extract the UUID of the created patient
+
+
+
+Book Appointment API
+
+
+Use the UUIDs of the created provider and patient
+
+
+Validate:
+
+
+Status Code = 200
+
+
+Response includes "message": "Appointment booked successfully."
+
+
+
+
+
+Additional Instructions:
+
+
+Use Playwright’s request API for making HTTP requests
+
+
+Maintain proper structure and modular code
+
+
+Use assertions to validate each response
+
+
+Do not generate the actual script unless asked
+
+
+Ensure the report captures each validation step clearly
+
+
+Let me know once the setup is understood, and wait until I ask to generate the code.
+
+
+This version should work well with Claude’s structured reasoning capabilities. Let me know if you want to convert this for other tools like Postman, REST Assured, or Karate.
+
+
+
+
+
